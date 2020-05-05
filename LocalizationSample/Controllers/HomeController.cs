@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using LocalizationSample.Models;
+using Microsoft.Extensions.Localization;
 
 namespace LocalizationSample.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IStringLocalizer<HomeController> _localizer;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,IStringLocalizer<HomeController> localizer)
         {
             _logger = logger;
+            _localizer = localizer;
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -26,6 +29,8 @@ namespace LocalizationSample.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Account = _localizer["Account"];
+            ViewBag.Password = _localizer["Password"];
             return View();
         }
 
