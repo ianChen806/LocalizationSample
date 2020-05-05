@@ -5,18 +5,31 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="Resources\Controllers\HomeController.resx">
+      <EmbeddedResource Update="Controllers\HomeController.en.resx">
         <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>HomeController.Designer.cs</LastGenOutput>
+        <LastGenOutput>HomeController.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Controllers\HomeController.zh.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>HomeController.zh.Designer.cs</LastGenOutput>
       </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Resources\Controllers\HomeController.Designer.cs">
+      <Compile Update="Controllers\HomeController.en.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
-        <DependentUpon>HomeController.resx</DependentUpon>
+        <DependentUpon>HomeController.en.resx</DependentUpon>
       </Compile>
+      <Compile Update="Controllers\HomeController.zh.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>HomeController.zh.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Resources\Controllers" />
     </ItemGroup>
 
 
