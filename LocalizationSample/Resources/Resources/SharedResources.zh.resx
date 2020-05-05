@@ -121,6 +121,14 @@
     <value>帳號</value>
     <comment>帳號</comment>
   </data>
+  <data name="MyClass.Id" xml:space="preserve">
+    <value>哀低</value>
+    <comment>Id</comment>
+  </data>
+  <data name="MyClass.Name" xml:space="preserve">
+    <value>姓名</value>
+    <comment>Name</comment>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>密碼</value>
     <comment>密碼</comment>

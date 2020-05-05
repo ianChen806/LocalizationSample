@@ -121,6 +121,14 @@
     <value>Act</value>
     <comment>Act</comment>
   </data>
+  <data name="MyClass.Id" xml:space="preserve">
+    <value>Id</value>
+    <comment>Id</comment>
+  </data>
+  <data name="MyClass.Name" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Pas</value>
     <comment>Pas</comment>

@@ -1,10 +1,16 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using LocalizationSample.Resources
+@* @inject IViewLocalizer _localizer *@
+@inject IHtmlLocalizer<SharedResources> _localizer
+
+@model MyClass
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <h1 class="display-4">@ViewBag.Account</h1>
-    <h1 class="display-4">@ViewBag.Password</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">----------</h1>
+    <h1 class="display-4">@_localizer["Account"]</h1>
+    <h1 class="display-4">----------</h1>
+    <div><label asp-for="Id"></label></div>
+    <div><label asp-for="Name"></label></div>
 </div>

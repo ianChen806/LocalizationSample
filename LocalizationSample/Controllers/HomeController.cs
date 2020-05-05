@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using LocalizationSample.Models;
+using LocalizationSample.Resources;
 using Microsoft.Extensions.Localization;
 
 namespace LocalizationSample.Controllers
@@ -13,9 +14,10 @@ namespace LocalizationSample.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IStringLocalizer<HomeController> _localizer;
+        private readonly IStringLocalizer<SharedResources> _localizer;
 
-        public HomeController(ILogger<HomeController> logger,IStringLocalizer<HomeController> localizer)
+        public HomeController(ILogger<HomeController> logger,
+                              IStringLocalizer<SharedResources> localizer)
         {
             _logger = logger;
             _localizer = localizer;

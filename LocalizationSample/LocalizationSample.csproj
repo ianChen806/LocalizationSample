@@ -5,31 +5,45 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <EmbeddedResource Update="Controllers\HomeController.en.resx">
+      <EmbeddedResource Update="Resources\Models\MyClass.en.resx">
         <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>HomeController.en.Designer.cs</LastGenOutput>
+        <LastGenOutput>MyClass.en.Designer.cs</LastGenOutput>
       </EmbeddedResource>
-      <EmbeddedResource Update="Controllers\HomeController.zh.resx">
+      <EmbeddedResource Update="Resources\Models\MyClass.zh.resx">
         <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>HomeController.zh.Designer.cs</LastGenOutput>
+        <LastGenOutput>MyClass.zh.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Resources\SharedResources.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>SharedResources.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Resources\Resources\SharedResources.zh.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>SharedResources.zh.Designer.cs</LastGenOutput>
       </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Controllers\HomeController.en.Designer.cs">
+      <Compile Update="Resources\Models\MyClass.en.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
-        <DependentUpon>HomeController.en.resx</DependentUpon>
+        <DependentUpon>MyClass.en.resx</DependentUpon>
       </Compile>
-      <Compile Update="Controllers\HomeController.zh.Designer.cs">
+      <Compile Update="Resources\Models\MyClass.zh.Designer.cs">
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
-        <DependentUpon>HomeController.zh.resx</DependentUpon>
+        <DependentUpon>MyClass.zh.resx</DependentUpon>
       </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Resources\Controllers" />
+      <Compile Update="Resources\Resources\SharedResources.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>SharedResources.en.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Resources\Resources\SharedResources.zh.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>SharedResources.zh.resx</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 
