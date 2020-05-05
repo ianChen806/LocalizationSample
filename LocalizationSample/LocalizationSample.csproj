@@ -21,6 +21,14 @@
         <Generator>ResXFileCodeGenerator</Generator>
         <LastGenOutput>SharedResources.zh.Designer.cs</LastGenOutput>
       </EmbeddedResource>
+      <EmbeddedResource Update="Controllers\HomeController.zh.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>HomeController.zh.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Controllers\HomeController.en.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>HomeController.en.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
@@ -43,6 +51,16 @@
         <DesignTime>True</DesignTime>
         <AutoGen>True</AutoGen>
         <DependentUpon>SharedResources.zh.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Controllers\HomeController.zh.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>HomeController.zh.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Controllers\HomeController.en.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>HomeController.en.resx</DependentUpon>
       </Compile>
     </ItemGroup>
 

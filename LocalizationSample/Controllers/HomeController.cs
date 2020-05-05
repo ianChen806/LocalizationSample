@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,11 @@ namespace LocalizationSample.Controllers
         {
             ViewBag.Account = _localizer["Account"];
             ViewBag.Password = _localizer["Password"];
+            
+            var enLocalizer = _localizer.WithCulture(new CultureInfo("en"));
+            var localizedStrings = enLocalizer.GetAllStrings(includeParentCultures: true);
+            IEnumerable<LocalizedString> allResources = localizedStrings;
+            
             return View();
         }
 

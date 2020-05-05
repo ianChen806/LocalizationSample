@@ -23,37 +23,24 @@ namespace LocalizationSample
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddControllersWithViews()
-                    .AddViewLocalization()
-                    .AddDataAnnotationsLocalization(options =>
-                    {
-                        options.DataAnnotationLocalizerProvider = (type, factory) => 
-                            factory.Create(typeof(SharedResources));
-                    } );
-
-            services.AddLocalization(options =>
-            {
-                options.ResourcesPath = "Resources";
-            });
-        }
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            var supportedCultures = new List<CultureInfo>()
+            var cultures = new List<CultureInfo>
             {
                 new CultureInfo("zh"),
                 new CultureInfo("en"),
             };
-            app.UseRequestLocalization(new RequestLocalizationOptions()
+            var localizationOptions = new RequestLocalizationOptions
             {
                 DefaultRequestCulture = new RequestCulture("zh"),
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures,
-            });
+                SupportedCultures = cultures,
+                SupportedUICultures = cultures
+            };
+            localizationOptions.RequestCultureProviders
+                               .OfType<CookieRequestCultureProvider>()
+                               .First()
+                               .CookieName = "UserCulture";
 
             if (env.IsDevelopment())
             {
@@ -77,8 +64,25 @@ namespace LocalizationSample
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                                             name: "default",
-                                             pattern: "{controller=Home}/{action=Index}/{id?}");
+                                             "default",
+                                             "{controller=Home}/{action=Index}/{id?}");
+            });
+        }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllersWithViews()
+                    .AddViewLocalization()
+                    .AddDataAnnotationsLocalization(options =>
+                    {
+                        options.DataAnnotationLocalizerProvider = (type, factory) =>
+                            factory.Create(typeof(SharedResources));
+                    });
+
+            services.AddLocalization(options =>
+            {
+                options.ResourcesPath = "Resources";
             });
         }
     }
